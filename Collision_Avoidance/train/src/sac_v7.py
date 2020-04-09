@@ -169,9 +169,9 @@ class SAC(object):
         tf.summary.scalar(self.name+'value_loss', self.value_loss)
         tf.summary.scalar(self.name+'total_value_loss', self.total_value_loss)
         self.merged = tf.summary.merge_all()
-        self.writer = tf.summary.FileWriter('/home/yue/SAC_0412/src/Collision_Avoidance/train/logs/'+NAME+'/'+self.name+'/', self.sess.graph)
+        self.writer = tf.summary.FileWriter('/home/chi/SAC_0401/src/Collision_Avoidance/train/logs/'+NAME+'/'+self.name+'/', self.sess.graph)
         self.saver = tf.train.Saver()
-        self.path = '/home/yue/SAC_0412/src/Collision_Avoidance/train/'+ NAME +'/'+ self.name
+        self.path = '/home/chi/SAC_0401/src/Collision_Avoidance/train/'+ NAME +'/'+ self.name
         if LOAD:
             self.saver.restore(self.sess, tf.train.latest_checkpoint(self.path))
         else:

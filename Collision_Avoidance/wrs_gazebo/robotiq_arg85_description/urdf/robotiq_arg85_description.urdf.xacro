@@ -85,10 +85,10 @@
   </link>
   <joint
     name="${side}_finger_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.0306011444260539 0 0.0627920162695395"
-      rpy="0 0 0" />
+      rpy="0 -0.55441176 0" />
     <parent
       link="${side}_robotiq_85_base_link" />
     <child
@@ -196,10 +196,10 @@
   </link>
   <joint
     name="${side}_left_inner_knuckle_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.0127000000001501 0 0.0693074999999639"
-      rpy="0 0 0" />
+      rpy="0 -0.55441176 0" />
     <parent
       link="${side}_robotiq_85_base_link" />
     <child
@@ -254,10 +254,10 @@
   </link>
   <joint
     name="${side}_left_inner_finger_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.034585310861294 0 0.0454970193817975"
-      rpy="0 0 0" />
+      rpy="0 0.55441176 0" />
     <parent
       link="${side}_left_inner_knuckle" />
     <child
@@ -312,10 +312,10 @@
   </link>
   <joint
     name="${side}_right_inner_knuckle_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="-0.0126999999998499 0 0.0693075000000361"
-      rpy="0 0 3.14159265358979" />
+      rpy="0 -0.55441176 3.14159265358979" />
     <parent
       link="${side}_robotiq_85_base_link" />
     <child
@@ -370,10 +370,10 @@
   </link>
   <joint
     name="${side}_right_inner_finger_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.0341060475457406 0 0.0458573878541688"
-      rpy="0 0 0" />
+      rpy="0 0.55441176 0" />
     <parent
       link="${side}_right_inner_knuckle" />
     <child
@@ -428,10 +428,10 @@
   </link>
   <joint
     name="${side}_right_outer_knuckle_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="-0.0306011444258893 0 0.0627920162695395"
-      rpy="0 0 3.14159265358979" />
+      rpy="0 -0.55441176 3.14159265358979" />
     <parent
       link="${side}_robotiq_85_base_link" />
     <child
@@ -509,7 +509,7 @@
     <axis
       xyz="0 1 0" />
   </joint>
-  <transmission name="${side}_tran1">
+  <!-- <transmission name="${side}_tran1">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="${side}_finger_joint">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
@@ -568,7 +568,7 @@
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
-  </transmission>
+  </transmission> -->
   <xacro:robotiq_arg85_gazebo side="${side}"/>
   </xacro:macro>
 </robot>

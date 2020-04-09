@@ -13,7 +13,7 @@ from CheckCollision_v1 import CheckCollision
 # from vacuum_cmd_msg.srv import VacuumCmd
 class Test(core.Env):
 
-    dt = .2
+    # dt = .2
 
     LINK_LENGTH_1 = 1.  # [m]
     LINK_LENGTH_2 = 1.  # [m]
@@ -23,9 +23,9 @@ class Test(core.Env):
     LINK_COM_POS_2 = 0.5  #: [m] position of the center of mass of link 2
     LINK_MOI = 1.  #: moments of inertia for both links
 
-    MAX_VEL_1 = 2.
-    MAX_VEL_2 = 2.
-    MAX_VEL_3 = 2.
+    # MAX_VEL_1 = 2.
+    # MAX_VEL_2 = 2.
+    # MAX_VEL_3 = 2.
 
     ACTION_VEC_TRANS = 1/60
     ACTION_ORI_TRANS = 1/10
@@ -33,13 +33,13 @@ class Test(core.Env):
 
     NAME = ['/right_arm', '/left_arm', '/right_arm']
 
-    torque_noise_max = 0.
+    # torque_noise_max = 0.
 
     #: use dynamics equations from the nips paper or the book
-    book_or_nips = "book"
-    action_arrow = None
-    domain_fig = None
-    actions_num = 8
+    # book_or_nips = "book"
+    # action_arrow = None
+    # domain_fig = None
+    # actions_num = 8
 
     def __init__(self, name):
         self.__name = self.NAME[name%2]

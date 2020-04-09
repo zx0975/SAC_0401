@@ -60,7 +60,7 @@
     <model name="table">
       <link name="table_link">
         <inertial>
-          <mass>1</mass>
+          <mass>50</mass>
           <inertia>
             <ixx>0.166667</ixx>
             <ixy>0</ixy>
@@ -84,7 +84,7 @@
           </geometry>
           <material>
             <script>
-              <name>Gazebo/White</name>
+              <name>Gazebo/Gray</name>
               <uri>file://media/materials/scripts/gazebo.material</uri>
             </script>
             <!-- <shader type="pixel">
@@ -148,7 +148,7 @@
                 <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
                 <soft_cfm>0</soft_cfm>
                 <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
+                <kp>1</kp>
                 <kd>1</kd>
               </bullet>
             </contact>
@@ -157,63 +157,29 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose frame="">0.58 0 0.345 0 0 0</pose>
+      <pose frame="">0.6 0 0.4 0 0 0</pose>
     </model>
 
-    <!-- <model name="robotiq_sensor">
-      <link name="ft300_sensor">
-        <pose>0 0 2.0 0 0 0</pose>
-        <inertial>
-          <inertia>
-            <ixx>0.100000</ixx>
-            <ixy>0.000000</ixy>
-            <ixz>0.000000</ixz>
-            <iyy>0.100000</iyy>
-            <iyz>0.000000</iyz>
-            <izz>0.100000</izz>
-          </inertia>
-          <mass>10.00000</mass>
-        </inertial>
-        <visual name="visual_cylinder">
-          <pose>0 0 0 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <radius>0.0300000</radius>
-              <length>0.01</length>
-            </cylinder>
-          </geometry>
-        </visual>
-        <collision name="collision_sphere">
-          <max_contacts>250</max_contacts>
-          <geometry>
-            <sphere>
-              <radius>0.100000</radius>
-            </sphere>
-          </geometry>
-        </collision>
-      </link>
-      <joint name="force_joint" type="revolute">
-        <parent>world</parent>
-        <child>ft300_sensor</child>
-        <pose>10 0 -1.5 0 0 0</pose>
-        <axis>
-          <limit>
-            <lower>-1.57079</lower>
-            <upper>1.57079</upper>
-          </limit>
-          <dynamics>
-            <damping>0.000000</damping>
-            <friction>0.000000</friction>
-          </dynamics>
-          <xyz>1.000000 0.000000 0.000000</xyz>
-        </axis>
-        <sensor name="robotiq_ft300" type="force_torque">
-          <frame>child</frame>
-          <measure_direction>child_to_parent</measure_direction>
-          <update_rate>30</update_rate>
-        </sensor>
-      </joint>
-    </model> -->
+      <!-- <include>
+        <pose>0 0 0.85 1.57 0 0</pose>
+        <uri>model://mobile_dual_arm/urdf/hole</uri>
+        <name>hole_2</name>
+        <static>false</static>
+      </include> -->
+
+      <include>
+        <pose>0.3 0 0.8 1.57 0 0</pose>
+        <uri>model://mobile_dual_arm/urdf/hole</uri>
+        <name>hole_1</name>
+        <static>true</static>
+      </include>
+
+      <!-- <include>
+        <pose>0 0 0 1.57 0 0</pose>
+        <uri>model://mobile_dual_arm/urdf/peg</uri>
+        <name>peg_1</name>
+        <static>false</static>
+      </include> -->
 
     <!-- Focus camera on tall pendulum -->
     <gui fullscreen='0'>
